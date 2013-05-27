@@ -1,0 +1,27 @@
+Name: nemo-qml-plugin-signon-qt5
+Summary: Signon framework support for QML applications
+URL: https://github.com/nemomobile/nemo-qml-plugin-signon
+Group: System/Libraries
+Description: "%{summary}."
+Version: 0.0.0
+Release: 1
+Sources:
+    - "%{name}-%{version}.tar.bz2"
+License: BSD
+Configure: none
+Builder: qmake5
+PkgConfigBR:
+    - Qt5Core
+    - Qt5Qml
+    - Qt5Test
+    - libsignon-qt5
+Files:
+    - "%{_libdir}/qt5/qml/org/nemomobile/signon/libnemosignon.so"
+    - "%{_libdir}/qt5/qml/org/nemomobile/signon/qmldir"
+SubPackages:
+    - Name: signon-tests
+      Summary: QML signon plugin tests
+      Group: System/Libraries
+      Description: "%{summary}."
+      Files:
+          - "/opt/tests/nemo-qml-plugins-qt5/signon/*"

@@ -234,13 +234,21 @@ void tst_ServiceAccountIdentityInterface::signIn()
 void tst_ServiceAccountIdentityInterface::process()
 {
     // Can't test this in isolation without appropriate signon plugins (oauth2)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    QSKIP("requires oauth2 signon plugins");
+#else
     QSKIP("requires oauth2 signon plugins", SkipSingle);
+#endif
 }
 
 void tst_ServiceAccountIdentityInterface::signOut()
 {
     // Can't test this in isolation without appropriate signon plugins (oauth2)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    QSKIP("requires oauth2 signon plugins");
+#else
     QSKIP("requires oauth2 signon plugins", SkipSingle);
+#endif
 }
 
 void tst_ServiceAccountIdentityInterface::expectedUsage()
@@ -263,7 +271,11 @@ void tst_ServiceAccountIdentityInterface::expectedUsage()
     //         }
     //     }
     // }
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    QSKIP("requires oauth2 signon plugins");
+#else
     QSKIP("requires oauth2 signon plugins", SkipSingle);
+#endif
 }
 
 #include "tst_serviceaccountidentityinterface.moc"
